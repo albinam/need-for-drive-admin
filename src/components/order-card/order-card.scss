@@ -1,0 +1,190 @@
+@import "src/styles/vars";
+
+.cards {
+  display: flex;
+  flex-direction: column;
+
+  &_card {
+    display: flex;
+    flex-direction: row;
+    margin: 16px 0 32px 22px;
+    justify-content: space-between;
+    padding-right: 22px;
+    padding-left: 22px;
+    flex-wrap: wrap;
+
+    &_main {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &_image {
+      width: 138px;
+      margin-right: 16px;
+
+      img {
+        width: 138px;
+      }
+    }
+
+    &_desc {
+      font-family: $fontRegular;
+      color: #868E96;
+      font-size: 13px;
+      letter-spacing: -0.37px;
+      line-height: 15px;
+      width: 286px;
+
+      &_head {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 6px;
+        flex-wrap: wrap;
+
+        &_name {
+          color: black;
+        }
+
+        &_city {
+          color: black;
+        }
+
+        &_address {
+          color: black;
+        }
+
+      }
+
+      &_color {
+        margin-top: 6px;
+        display: flex;
+        flex-direction: row;
+      }
+
+      &_color-value {
+        color: black;
+      }
+    }
+
+    &_price {
+      font-size: 24px;
+      font-family: $fontRegular;
+      letter-spacing: -0.75px;
+      line-height: 28px;
+      width: 131px;
+      text-align: center;
+    }
+
+    &_buttons {
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+      height: 24px;
+      font-family: $fontRegular;
+      font-size: 11px;
+      letter-spacing: -0.35px;
+      line-height: 13px;
+      color: black;
+
+      &_submit {
+        border: 0.5px solid #BECAD6;
+        box-sizing: border-box;
+        border-radius: 4px 0 0 4px;
+        background: white url("../../assets/images/submit.svg") no-repeat 10% 50%;
+        padding: 0 16px 0 22px;
+      }
+
+      &_cancel {
+        border: 0.5px solid #BECAD6;
+        box-sizing: border-box;
+        background: white url("../../assets/images/cancel.svg") no-repeat 10% 50%;
+        padding: 0 11px 0 19px;
+      }
+
+      &_change {
+        border: 0.5px solid #BECAD6;
+        box-sizing: border-box;
+        border-radius: 0 4px 4px 0;
+        background: white url("../../assets/images/change.svg") no-repeat 10% 50%;
+        padding: 0 8px 0 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: $tabletSize) {
+  .cards_card {
+    justify-content: flex-start;
+    margin-bottom: 16px;
+
+    &_image {
+      width: 110px;
+
+      img {
+        width: 110px;
+      }
+    }
+
+    &_desc {
+      font-size: 12px;
+    }
+
+    &_checkbox {
+      display: flex;
+      flex-direction: row;
+      font-size: 11px;
+      margin-top: 8px;
+    }
+
+    &_price {
+      font-size: 12px;
+      font-family: $fontMedium;
+      line-height: 15px;
+      margin-top: 10px;
+      margin-left: 32px;
+      width: auto;
+    }
+
+    &_buttons {
+      margin-top: 10px;
+      width: 300px;
+    }
+  }
+}
+@media (max-width: $mobileSizeW) {
+  .cards_card {
+    justify-content: flex-start;
+    padding-right: 16px;
+    padding-left: 16px;
+    margin: 10px 0 10px 0;
+
+    &_image {
+      width: 110px;
+
+      img {
+        width: 110px;
+      }
+    }
+
+    &_desc {
+      font-size: 11px;
+      flex-wrap: wrap;
+      width: 100px;
+    }
+
+    &_checkbox {
+      display: flex;
+      flex-direction: column;
+      font-size: 10px;
+    }
+
+    &_price {
+      font-size: 15px;
+    }
+
+    &_buttons {
+      justify-content: center;
+      margin-top: 10px;
+    }
+  }
+}

@@ -20,7 +20,6 @@ export const login = (username: string, password: string) => {
                 password,
             },
         );
-        console.log(response)
         localStorage.setItem('access_token', response.data.access_token);
         localStorage.setItem('refresh_token', response.data.refresh_token);
         dispatch(setUser(response.data.user_id));
