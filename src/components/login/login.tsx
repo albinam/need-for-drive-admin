@@ -6,7 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useHistory} from "react-router";
 import {RootState} from "../../redux/store";
 
-function Login() {
+const Login:React.FC = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const dispatch = useDispatch();
@@ -49,6 +49,6 @@ function Login() {
             </div>
         </div>
     )
-}
+};
 
 export default Login;
