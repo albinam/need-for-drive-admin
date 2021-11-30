@@ -1,5 +1,5 @@
 import axios from "axios";
-import {setCities, setOrders, setStatuses} from "../redux/actions/actions";
+import {setCars, setCategories, setCities, setOrders, setStatuses} from "../redux/actions/actions";
 
 const url = 'https://api-factory.simbirsoft1.com/api';
 const fetchRequest = async (way: string) => {
@@ -42,5 +42,33 @@ export const getOrdersByFilter = (
             `/db/order?page=${currentPage}&limit=${limit}${status}${city}${period}`,
         );
         dispatch(setOrders(res));
+    }
+};
+
+export const getCars= (currentPage: number, limit: number) => {
+    return async (dispatch: any) => {
+        const res: any = await fetchRequest(
+            `/db/car?page=${currentPage}&limit=${limit}`,
+        );
+        dispatch(setCars(res));
+    };
+}
+
+export const getCarsByCategory = (
+    currentPage: number,
+    limit: number,
+    categoryId: string,
+) => {
+    return async (dispatch: any) => {
+        const res: any = await fetchRequest(
+            `/db/car?page=${currentPage}&limit=${limit}&categoryId=${categoryId}`,
+        );
+        dispatch(setCars(res));
+    }
+}
+export const getCarCategories = () => {
+    return async (dispatch: any) => {
+        const res: any = await fetchRequest('/db/category');
+        dispatch(setCategories(res.data));
     }
 };

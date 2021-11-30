@@ -9,15 +9,24 @@ import {ReactComponent as Item5} from '../../assets/images/menu5.svg'
 import {ReactComponent as Item6} from '../../assets/images/menu6.svg'
 import {ReactComponent as Item7} from '../../assets/images/menu7.svg'
 import './sidebar.scss';
+import {useDispatch, useSelector} from "react-redux";
+import {setCurrentNavItem} from "../../redux/actions/actions";
+import {RootState} from "../../redux/store";
 
 function Sidebar() {
+    const nav = useSelector((state: RootState) => state.navigation.currentNavItem);
+    const dispatch = useDispatch();
+
+    const handleClick = (e: any) => {
+        dispatch(setCurrentNavItem(e.key));
+    }
     return (
         <div className="sidebar">
             <div className="sidebar_title">
                 <div className="sidebar_title_icon"><Icon/></div>
                 <h1 className="sidebar_title_text">Need for car</h1>
             </div>
-            <Menu className="sidebar_menu">
+            <Menu className="sidebar_menu" onClick={(e)=>handleClick(e)} selectedKeys={[nav]}>
                 <Menu.Item key="1" className="sidebar_menu-item"><Item1 className="sidebar_menu-item-logo"/>Карточка
                     автомобиля</Menu.Item>
                 <Menu.Item key="2" className="sidebar_menu-item"><Item2 className="sidebar_menu-item-logo"/>Список
