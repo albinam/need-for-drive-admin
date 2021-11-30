@@ -5,8 +5,9 @@ import {Provider} from "react-redux";
 import store from "./redux/store";
 import AdminPage from "./pages/admin-page/admin-page";
 import LoginPage from "./pages/login-page/login-page";
+import "antd/dist/antd.css";
 
-function App() {
+const App: React.FC = () =>{
   return (
       <Provider store={store}>
         <HashRouter>

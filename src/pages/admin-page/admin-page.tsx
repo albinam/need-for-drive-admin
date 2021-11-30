@@ -2,10 +2,15 @@ import React, {useEffect} from 'react';
 import {useHistory} from "react-router";
 import {useSelector} from "react-redux";
 import {RootState} from "../../redux/store";
+import Header from "../../components/header/header";
+import Sidebar from "../../components/sidebar/sidebar";
+import Footer from "../../components/footer/footer";
+import OrderLayout from "../../components/order/order-layout";
+import "./admin-page.scss"
 
-function AdminPage(){
+const AdminPage:React.FC = () => {
     const history = useHistory();
-    const user = useSelector((state:RootState) => state.user);
+    const user = useSelector((state: RootState) => state.user);
 
     useEffect(() => {
         if (!user.authenticated) {
@@ -13,8 +18,18 @@ function AdminPage(){
         }
     }, [history, user.authenticated]);
 
-    return(
-        <div>тут будет панель админа! аутентификация прошла успешно ура</div>
+    return (
+        <div className="admin-page">
+            <div className="admin-page_sidebar">
+                <Sidebar/>
+            </div>
+            <div className="admin-page_content">
+                <Header/>
+                <OrderLayout/>
+                <Footer/>
+            </div>
+        </div>
     )
-}
+};
+
 export default AdminPage;

@@ -1,12 +1,10 @@
 import React from 'react';
 import Login from "../../components/login/login";
 
-function LoginPage() {
-    return (
-        <div>
-            <Login/>
-        </div>
-    )
-}
+const LoginPage:React.FC = () => (
+    <div>
+        <Login/>
+    </div>
+);
 
 export default LoginPage;

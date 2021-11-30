@@ -1,0 +1,17 @@
+@import "src/styles/vars";
+
+.admin-page{
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+
+  &_sidebar{
+    width: 285px;
+    display: flex;
+  }
+  &_content{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+}

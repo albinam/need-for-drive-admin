@@ -1,0 +1,84 @@
+@import "src/styles/vars";
+
+.sidebar {
+  width: 285px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  box-shadow: 0px 1px 75px rgba(90, 97, 105, 0.11), 0px 2px 4px rgba(90, 97, 105, 0.12), 0px 7.5px 11px rgba(90, 97, 105, 0.1), 0px 3.5px 17.5px rgba(165, 182, 201, 0.1);
+  z-index: 100;
+
+  &_title {
+    display: flex;
+    text-align: center;
+    height: 68px;
+    font-family: $fontRegular;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+
+    &_icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    &_text {
+      color: #3d5170;
+      font-size: 16px;
+      margin: 4px 0 0 4px;
+      line-height: 21.5px;
+    }
+  }
+
+  &_menu {
+    height: calc(100vh - 68px);
+  }
+
+  &_menu-item {
+    height: 57px;
+    border-top: 1px solid #CACEDB;
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+    padding-top: 8px;
+    font-size: 15px;
+    font-family: $fontRegular;
+    color: #3d5170;
+
+    &-logo {
+      margin-right: 10px;
+      width: 12px;
+      height: 12px;
+      fill: #CACEDB;
+    }
+  }
+
+  .last {
+    border-bottom: 1px solid #CACEDB;
+  }
+}
+
+.ant-menu-item-selected {
+  background-color: white !important;
+  border-left: 5px solid #FBFBFB !important;
+
+  .ant-menu-title-content .menu-item-logo {
+    fill: #007BFF !important;
+    margin-left: -5px;
+  }
+}
+
+@media (max-width: $tabletSize) {
+  .sidebar {
+    width: 240px;
+  }
+}
+
+@media (max-width: $mobileSizeW) {
+  .sidebar {
+    width: 40px;
+
+    &_title_text {
+      display: none;
+    }
+  }
+}
