@@ -22,6 +22,7 @@ const CarsFilter:React.FC = () => {
 
     function handleChangeCategory(category: any) {
         dispatch(setSelectedCategory(category));
+        dispatch(setCurrentPage(0));
     }
 
     useEffect(() => {
