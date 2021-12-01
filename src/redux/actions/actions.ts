@@ -106,7 +106,6 @@ export function setCarName(name: any) {
 }
 
 export function setCarCategory(category: any) {
-    console.log(category)
     return {
         type: 'SET_CAR_CATEGORY',
         payload: {
