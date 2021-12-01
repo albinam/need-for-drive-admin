@@ -1,24 +1,32 @@
 import React from 'react';
 import {Pagination} from 'antd';
-import {useDispatch, useSelector} from 'react-redux';
-import {setCurrentPage} from "../../../redux/actions/actions";
-import {RootState} from "../../../redux/store";
+import {useDispatch} from 'react-redux';
+import {setCurrentPage, setCurrentPageCars} from "../../redux/actions/actions";
 import './pagination.scss';
-
-const OrderPagination:React.FC = () => {
+interface Props {
+    currentPage: number;
+    limit: number;
+    ordersCount:number;
+    carsCount:number;
+}
+const CustomPagination = (props:Props) => {
     const dispatch = useDispatch();
     const handleChangePage = (currentPage: number) => {
-        dispatch(setCurrentPage(currentPage - 1));
+        if(props.ordersCount!=0) {
+            dispatch(setCurrentPage(currentPage - 1));
+        }
+        if(props.carsCount!=0){
+            dispatch(setCurrentPageCars(currentPage - 1));
+        }
     };
-    const {currentPage, limit, ordersCount} = useSelector((state: RootState) => state.orderInfo)
 
     return (
         <div className="pagination">
             <Pagination
-                current={currentPage + 1}
-                defaultCurrent={currentPage + 1}
-                total={ordersCount}
-                pageSize={limit}
+                current={props.currentPage + 1}
+                defaultCurrent={props.currentPage + 1}
+                total={props.ordersCount!=0?props.ordersCount:props.carsCount}
+                pageSize={props.limit}
                 size="small"
                 showSizeChanger={false}
                 onChange={handleChangePage}
@@ -40,4 +48,4 @@ const OrderPagination:React.FC = () => {
     )
 }
 
-export default OrderPagination;
+export default CustomPagination;

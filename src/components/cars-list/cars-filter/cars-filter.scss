@@ -1,0 +1,92 @@
+@import "src/styles/vars";
+
+.cars-filter {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: $fontRegular;
+  font-size: 11px;
+  color: #868E96;
+  justify-content: flex-start;
+  align-items: center;
+  height: 59px;
+  padding: 0 22px 0 22px;
+  box-shadow: 0px -0.5px 0px #E0E2E8, 0px 0.5px 0px #E0E2E8;
+
+  &_select {
+    display: flex;
+    justify-content: space-evenly;
+    height: 29px;
+  }
+
+  &_apply {
+    margin-left: auto;
+    background: #007BFF;
+    border: 0.5px solid #007BFF;
+    box-sizing: border-box;
+    border-radius: 4px;
+    color: white;
+    font-family: $fontRegular;
+    font-size: 11px;
+    line-height: 13px;
+    text-align: center;
+    letter-spacing: -0.35px;
+    width: 95px;
+    height: 29px;
+  }
+
+  .ant-select {
+    width: 110px;
+    margin: 0 4px 4px 0;
+  }
+
+  .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    position: relative;
+    background-color: white;
+    border: 1px solid $color-light-gray;
+    border-radius: 4px;
+
+    @media (min-width: 320px) {
+      height: 25px;
+    }
+
+    @media (min-width: 640px) {
+      height: 30px;
+    }
+  }
+
+  .ant-select-selection-item {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 12px;
+    color: #868E96;
+
+    @media (min-width: 320px) {
+      font-size: 10px !important;
+    }
+  }
+
+  .ant-select-item.ant-select-item-option {
+    @media (min-width: 768px) {
+      font-size: 13px !important;
+    }
+
+    @media (min-width: 320px) {
+      font-size: 10px !important;
+    }
+  }
+}
+@media (max-width: $mobileSizeW) {
+  .cars-filter {
+    height: auto;
+    justify-content: center;
+    flex-direction: column;
+    padding: 8px 0 8px 0;
+
+    &_apply {
+      margin-top: 8px;
+      height: 25px;
+      margin-left: 0;
+    }
+  }
+}
+

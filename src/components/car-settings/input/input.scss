@@ -1,0 +1,30 @@
+@import "src/styles/vars";
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    font-family:$fontRegular;
+    color: #121212;
+    margin-top: 15px;
+    font-size: 10.5px;
+    line-height: 12px;
+    letter-spacing: -0.18px;
+  }
+
+  input {
+    width: 320px;
+    height: 30px;
+    border: 1px solid #BECAD6;
+    border-radius: 4px;
+    margin-top: 8px;
+    padding: 8px 0 9px 11px;
+    font-family:$fontRegular;
+    font-size: 11px;
+    line-height: 13px;
+    letter-spacing: -0.2px;
+    color: #121212;
+    margin-right: 21px;
+  }
+}

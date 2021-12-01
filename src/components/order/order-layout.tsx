@@ -6,7 +6,7 @@ import {RootState} from "../../redux/store";
 import {getOrdersByFilter} from "../../utils/api";
 import Loader from "../loading/loading";
 import Dropdown from "../order-card/dropdown/dropdown";
-import OrderPagination from "../order-card/pagination/pagination";
+import CustomPagination from "../pagination/pagination";
 
 const OrderLayout:React.FC = () => {
     const dispatch = useDispatch();
@@ -58,7 +58,7 @@ const OrderLayout:React.FC = () => {
             <div className="order_card">
                 <Dropdown/>
                 <OrderCard/>
-                <OrderPagination/>
+                <CustomPagination currentPage={currentPage} ordersCount={ordersCount} limit={limit} carsCount={0}/>
             </div>
         </div>
     )
