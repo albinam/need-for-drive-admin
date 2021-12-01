@@ -8,6 +8,7 @@ import Footer from "../../components/footer/footer";
 import OrderLayout from "../../components/order/order-layout";
 import "./admin-page.scss"
 import CarsLayout from "../../components/cars/cars-layout";
+import CarCardLayout from "../../components/car-card/car-card-layout";
 
 const AdminPage:React.FC = () => {
     const history = useHistory();
@@ -29,6 +30,7 @@ const AdminPage:React.FC = () => {
                 <Header/>
                 {nav=="3" && <OrderLayout/>}
                 {nav=="2" && <CarsLayout/>}
+                {nav=="1" && <CarCardLayout/>}
                 <Footer/>
             </div>
         </div>

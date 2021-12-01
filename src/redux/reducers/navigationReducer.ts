@@ -1,5 +1,5 @@
 const initialState = {
-    currentNavItem: "1"
+    currentNavItem: "2"
 }
 
 export default function navigationReducer(state:{currentNavItem:string} = initialState, action: any) {

@@ -91,3 +91,78 @@ export function setCurrentNavItem(activeNav: any) {
         payload: activeNav
     }
 }
+export function setCar(car: any) {
+    return {
+        type: 'SET_CAR',
+        payload: car
+    }
+}
+
+export function setCarName(name: any) {
+    return {
+        type: 'SET_CAR_NAME',
+        payload: name
+    }
+}
+
+export function setCarCategory(category: any) {
+    console.log(category)
+    return {
+        type: 'SET_CAR_CATEGORY',
+        payload: {
+            description: category[0].description,
+            id: category[0].id,
+            name: category[0].name,
+            createdAt:category[0].createdAt,
+            updatedAt:category[0].updatedAt
+        }
+    }
+}
+
+export function setCarPriceMin(priceMin: any) {
+    return {
+        type: 'SET_CAR_PRICE_MIN',
+        payload: priceMin
+    }
+}
+
+export function setCarPriceMax(priceMax: any) {
+    return {
+        type: 'SET_CAR_PRICE_MAX',
+        payload: priceMax
+    }
+}
+export function setCarDesc(desc: any) {
+    return {
+        type: 'SET_CAR_DESCRIPTION',
+        payload: desc
+    }
+}
+export function setPath(pathVal: any) {
+    return {
+        type: 'SET_CAR_THUMBNAIL',
+        payload: {
+            path: pathVal.path,
+            size: pathVal.size,
+            originalname: pathVal.originalname,
+            mimetype: pathVal.mimetype
+        }
+    }
+}
+export function addColor(color: any) {
+    return {
+        type: 'ADD_COLOR',
+        payload: color
+    }
+}
+export function setAlert(alert:any) {
+    return {
+        type: 'SET_ALERT',
+        payload:alert
+    }
+}
+export function closeAlert() {
+    return {
+        type: 'SET_CLOSE_ALERT'
+    }
+}
