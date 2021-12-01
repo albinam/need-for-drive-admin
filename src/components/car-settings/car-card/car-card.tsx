@@ -5,6 +5,7 @@ import {RootState} from "../../../redux/store";
 import {Progress} from 'antd';
 import "./car-card.scss";
 import {setPath} from "../../../redux/actions/actions";
+import {convertBase64} from "../../../utils/utils";
 
 const CardCar:React.FC = () => {
     const car = useSelector((state: RootState) => state.car);
@@ -35,15 +36,6 @@ const CardCar:React.FC = () => {
             percent +=10;
         }
         return percent;
-    }
-
-    function convertBase64(file: any) {
-        return new Promise((resolve, reject) => {
-            const reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.onload = () => resolve(reader.result);
-            reader.onerror = (error) => reject(error);
-        });
     }
 
     const handleSelectFile = async (event: any) => {
