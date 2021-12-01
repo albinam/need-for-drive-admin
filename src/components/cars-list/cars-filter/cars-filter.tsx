@@ -2,7 +2,7 @@ import {Select} from 'antd';
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {ReactComponent as DropdownIcon} from '../../../assets/images/select.svg';
-import {setCurrentPage, setSelectedCategory} from '../../../redux/actions/actions';
+import {setCurrentPage, setCurrentPageCars, setSelectedCategory} from '../../../redux/actions/actions';
 import {RootState} from "../../../redux/store";
 import {getCarCategories, getCarsByCategory} from "../../../utils/api";
 import Loader from "../../loading/loading";
@@ -22,7 +22,7 @@ const CarsFilter:React.FC = () => {
 
     function handleChangeCategory(category: any) {
         dispatch(setSelectedCategory(category));
-        dispatch(setCurrentPage(0));
+        dispatch(setCurrentPageCars(0));
     }
 
     useEffect(() => {
