@@ -1,0 +1,64 @@
+@import "src/styles/vars";
+
+::-webkit-scrollbar {
+  width: 5px;
+  background: white;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+  border-left: 1px solid gray;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0ec261;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  background-clip: content-box;
+}
+
+.order {
+  background: $color-background;
+  height: calc(100vh - 70px - 68px);
+  overflow-y: auto;
+  overflow-x: auto;
+
+  &_text {
+    font-family: $fontRegular;
+    font-size: 29px;
+    color: $color-text;
+    line-height: 33px;
+    letter-spacing: -0.725px;
+    margin: 29px 0 28px 32px;
+  }
+
+  &_card {
+    margin-left: 32px;
+    margin-right: 25px;
+    background: white;
+    box-shadow: 0px 2px 0px rgba(90, 97, 105, 0.11), 0px 4px 8px rgba(90, 97, 105, 0.12), 0px 10px 10px rgba(90, 97, 105, 0.06), 0px 7px 70px rgba(90, 97, 105, 0.1);
+    border-radius: 9px;
+  }
+}
+
+@media (max-width: $tabletSize) {
+  .order {
+    width: calc(100vw - 240px);
+
+    &_text {
+      font-size: 20px;
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+  }
+}
+@media (max-width: $mobileSizeW) {
+  .order {
+    width: calc(100vw - 50px);
+    height: calc(100vh - 50px - 50px);
+    &_card {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+}
