@@ -6,7 +6,7 @@ import {setCurrentPage, setSelectedCity} from '../../../redux/actions/actions';
 import {setSelectedStatus} from '../../../redux/actions/actions';
 import {setSelectedPeriod} from '../../../redux/actions/actions';
 import {RootState} from "../../../redux/store";
-import {getOrdersByFilter, getStatusesList} from "../../../utils/api";
+import {getCityList, getOrdersByFilter, getStatusesList} from "../../../utils/api";
 import Loader from "../../loading/loading";
 import './dropdown.scss'
 
@@ -58,6 +58,7 @@ const Dropdown:React.FC = () => {
     useEffect(() => {
         setLoading(true)
         dispatch(getStatusesList());
+        dispatch(getCityList());
         if (cities && statuses) {
             setLoading(false)
         }
